@@ -14,7 +14,7 @@ namespace weixinCommon
         /// </summary>
         private const string urlForGettingUser = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN";
 
-        public string GetUserInfo(string appid, string secret, string openid)
+        public string GetUserInfo(string openid)
         {
             AccessToken accessToken = new AccessToken();
             string at = accessToken.GetAccesstoken();

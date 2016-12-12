@@ -54,8 +54,7 @@ namespace weixinCommon
                 if (Event.InnerText.Equals("CLICK"))
                 {
                     weixinUser wuUser = new weixinUser();
-                    string strJson = wuUser.GetUserInfo("wx44f8483b5dd952d0", "48dd07d24ca75aff634e7e50e4b5ceb1",
-                        FromUserName.InnerText);
+                    string strJson = wuUser.GetUserInfo(FromUserName.InnerText);
                     TZGBLL bll = new TZGBLL();
                     MTZG mtzg = bll.GetModelByWhere("ZG_NO='10029040'");
                     var userInfo = strJson.ToObject<MWeixinUser>();
@@ -76,6 +75,14 @@ namespace weixinCommon
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
                             "绑定工号" + userInfo.nickname + mtzg.ZG_NO);
+                    }
+                    else if (EventKey.InnerText.Equals("V1001_GHurl"))//click_two
+                    {
+                        responseContent = string.Format(ReplyType.Message_Text,
+                            FromUserName.InnerText,
+                            ToUserName.InnerText,
+                            DateTime.Now.Ticks,
+                            "你点击的是绑定工号" + userInfo.nickname + mtzg.ZG_NO + "\r\n 网址 <a href=\"http://q5sdn.free.natapp.cc\">点击进入</a>");
                     }
 
                 }

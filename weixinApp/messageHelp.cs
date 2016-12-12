@@ -55,8 +55,7 @@ namespace weixinApp
                 if (Event.InnerText.Equals("CLICK"))
                 {
                     weixinUser wuUser = new weixinUser();
-                    string strJson = wuUser.GetUserInfo("wx44f8483b5dd952d0", "48dd07d24ca75aff634e7e50e4b5ceb1",
-                        FromUserName.InnerText);
+                    string strJson = wuUser.GetUserInfo(FromUserName.InnerText);
                     TZGBLL bll = new TZGBLL();
                     MTZG mtzg = bll.GetModelByWhere("ZG_NO='10029040'");
                     var userInfo = strJson.ToObject<MWeixinUser>();
@@ -113,8 +112,7 @@ namespace weixinApp
             if (Content != null)
             {
                 weixinUser wuUser = new weixinUser();
-                string strJson = wuUser.GetUserInfo("wx44f8483b5dd952d0", "48dd07d24ca75aff634e7e50e4b5ceb1",
-                     FromUserName.InnerText);
+                string strJson = wuUser.GetUserInfo(FromUserName.InnerText);
                 var userInfo = strJson.ToObject<MWeixinUser>();
                 TZGBLL bll = new TZGBLL();
                 MTZG mtzg = bll.GetModelByWhere("ZG_NO='" + Content.InnerText + "'");
