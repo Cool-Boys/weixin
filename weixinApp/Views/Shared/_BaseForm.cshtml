@@ -1,0 +1,154 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/SUI")
+    @RenderSection("head", required: true)
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        /*自定义数据*/
+        .bar:after {
+            background-color: #82a25e;
+        }
+        .bar-tab .tab-item.active, .bar-tab .tab-item:active {
+            color: #5ef304;
+        }
+        .bar-tab:before {
+                background-color: #1f8811;
+        }
+        .bar .button-link {
+            color: #358c0a;
+        }
+
+        .title {
+            color: #45adef;
+        }
+
+        .bar-tab .tab-item {
+            color: #d7ffb4;
+        }
+        .card {
+                background: rgba(35, 243, 12, 0.35);
+        }
+        .card-header:after {
+            background-color: #08c11d;
+        }
+        a {
+            color: rgb(22, 146, 8);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="page-group">
+        <div class="page " id="router" style="  background: -webkit-linear-gradient(  rgb(252, 252, 253), rgb(224, 255, 165)); /* Safari 5.1 - 6.0 */
+                                                                                                        background: -o-linear-gradient( rgb(252, 252, 253), rgb(224, 255, 165) ); /* Opera 11.1 - 12.0 */
+                                                                                                        background: -moz-linear-gradient(rgb(252, 252, 253), rgb(224, 255, 165)); /* Firefox 3.6 - 15 */
+                                                                                                        background: linear-gradient(rgb(252, 252, 253), rgb(224, 255, 165)); /* 标准的语法 */
+                                                                                                        opacity: 0.8;">
+            <header class="bar bar-nav" style="background: linear-gradient( rgb(188, 231, 255), rgb(252, 252, 253));">
+                <a class="button button-link button-nav pull-left" id="btnReturn" data-transition='slide-out'>
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class="title">材料管理</h1>
+            </header>
+            <nav class="bar bar-tab" style=" background:linear-gradient( rgba(7, 119, 0, 0.75), rgb(48, 107, 3));">
+                <a class="tab-item active" href="#" id="btnHome">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">首页</span>
+                </a>
+                <a class="tab-item" href="#" id="btnIndex">
+                    <span class="icon icon-menu"></span>
+                    <span class="tab-label">操作</span>
+                </a>
+                <a class="tab-item" href="#" id="btnIndexPic">
+                    <span class="icon icon-picture"></span>
+                    <span class="tab-label">收藏</span>
+                </a>
+                <a class="tab-item" href="#">
+                    <span class="icon icon-settings"></span>
+                    <span class="tab-label">设置</span>
+                </a>
+            </nav>
+
+            <div class="content pull-to-refresh-content " draggable="true" id="clPage" data-ptr-distance="55">
+
+                @RenderBody()
+            </div>
+        </div>
+
+        <div class="page" id='router3'>
+            <header class="bar bar-nav">
+                <a class="button button-link button-nav pull-left back" href="#router">
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class='title' id="data">材料明细</h1>
+            </header>
+            <div class="content">
+                <div class="list-block" id="list">
+                    <ul>
+                        <!-- Text inputs -->
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">材料名称</div>
+                                    <div class="item-input">
+                                        <input name="SNAME" id="SNAME" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">材料编码</div>
+                                    <div class="item-input">
+                                        <input name="CL_NO" id="CL_NO" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">规格型号</div>
+                                    <div class="item-input">
+                                        <input name="SCALE" id="SCALE" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">物资分类</div>
+                                    <div class="item-input">
+                                        <input name="CWFL_IDNAME" id="CWFL_IDNAME" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @RenderSection("foot", required: true)@*View页面自定义特定js/css使用*@
+    <script src="~/Scripts/common.js" id="common"></script>
+    <script src="~/Scripts/Views/HomeIndex.js"></script>
+
+</body>
+</html>

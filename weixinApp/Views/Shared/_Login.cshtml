@@ -1,0 +1,53 @@
+﻿
+@using System.Web.Optimization
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/SUI")
+    <style>
+        #pageIndex {
+            background: url("../../images/bg3.jpg") no-repeat;
+            background-size: 100% 100%;
+        }
+
+            #pageIndex .list-block ul {
+                background: rgba(255, 255, 255, 0);
+            }
+
+            #pageIndex .list-block .item-inner:after {
+                background-color: rgba(231, 231, 231, 0);
+            }
+
+            #pageIndex .list-block ul:before {
+                background-color: rgba(231, 231, 231, 0);
+            }
+
+            #pageIndex .list-block ul:after {
+                background-color: rgba(231, 231, 231, 0);
+            }
+
+            #pageIndex .list-block .label {
+                color: bisque;
+            }
+
+        #showMes {
+            font: 14px normal;
+            color: red;
+        }
+    </style>
+
+</head>
+<body style="background-color: rgba(255, 255, 255, 0)">
+    @RenderBody()
+
+    @RenderSection("foot", required: true)@*View页面自定义特定js/css使用*@
+</body>
+</html>

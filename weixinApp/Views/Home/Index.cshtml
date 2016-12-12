@@ -1,0 +1,44 @@
+﻿@using BTLF.BZHS.Model
+
+@model List<MTXH_CLSite>
+
+@{
+    ViewBag.Title = "材料管理例子";
+    Layout = "~/Views/Shared/_BaseForm.cshtml";
+}
+@section head {
+
+}
+
+            <!-- 默认的下拉刷新层 -->
+            <div class="pull-to-refresh-layer">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+            </div>
+            <!-- 下面是正文 -->
+            <div class="card-container">
+                @foreach (var x in @Model)
+                {<div class="card">
+                     <div class="card-header"><a href="#router3" onclick="GetDetail('@x.CL_NO')" class=" link" >@x.CL_NO</a>
+                     </div>
+                     <div class="card-content">
+                         <div class="card-content-inner">
+                             @x.CL_NO|@x.SNAME|@x.SCALE
+                         </div>
+                     </div>
+
+                 </div>
+                }
+            </div>
+       
+
+
+
+
+
+  
+
+@section  foot{
+  
+
+}

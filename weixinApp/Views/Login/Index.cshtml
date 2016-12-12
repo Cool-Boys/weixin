@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.Title = "登录页面";
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<header class="bar bar-nav">
+    <h1 class='title'>@ViewBag.Title</h1>
+</header>
+<div class="page-group">
+    <div class="page" id="loadImg">
+        <img src="../../images/loadImg.gif"
+             alt="" width="100%" height="100%">
+    </div>
+    <div class="page" id="pageIndex">
+
+
+        <div class="list-block" id="listBlock">
+            <ul>
+                <!-- Text inputs -->
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="icon icon-form-name"></i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title label">用户名</div>
+                            <div class="item-input">
+                                <input type="text" style=" color:white;" name="username" id="username" placeholder="输入用户名">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="icon icon-form-password"></i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title label">密  码</div>
+                            <div class="item-input">
+                                <input type="password" style=" color:white;" id="password" name="password" placeholder="输入密码" class="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="align-top">
+                    <div class="item-content">
+                        <div class="item-media">
+                            <i class="icon icon-form-comment"></i>
+                        </div>
+                        <div class="item-inner">
+                            <div class="item-title label"></div>
+                            <div class="item-input">
+                                <p id="showMes"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="content-block">
+            <div class="row">
+                <div class="col-50">
+                    <a href="#" id="btnReg" class="button button-big button-fill button-link">注册</a>
+                </div>
+                <div class="col-50">
+                    <a id="btnLog" class="button button-big button-fill button-success">登录</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div class="page" id="pageReg">
+
+        <header class="bar bar-nav">
+            <h1 class='title'>表单</h1>
+        </header>
+        <div class="content">
+            <div class="list-block">
+                <ul>
+                    <!-- Text inputs -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">姓名</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="Your name">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-email"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">邮箱</div>
+                                <div class="item-input">
+                                    <input type="email" placeholder="E-mail">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-password"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">密码</div>
+                                <div class="item-input">
+                                    <input type="password" placeholder="Password" class="">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">性别</div>
+                                <div class="item-input">
+                                    <select>
+                                        <option>Male</option>
+                                        <option>Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Date -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">生日</div>
+                                <div class="item-input">
+                                    <input type="date" placeholder="Birth day" value="2014-04-30">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Switch (Checkbox) -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">开关</div>
+                                <div class="item-input">
+                                    <label class="label-switch">
+                                        <input type="checkbox">
+                                        <div class="checkbox"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="align-top">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">文本域</div>
+                                <div class="item-input">
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block">
+                <div class="row">
+                    <div class="col-50"><a href="#" id="btnCan" class="button button-big button-fill button-danger">取消</a></div>
+                    <div class="col-50"><a href="#" id="btnSub" class="button button-big button-fill button-success">提交</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@section foot{
+    <script src="~/Scripts/Views/LoginIndex.js"></script>
+
+}
