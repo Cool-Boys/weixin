@@ -1,5 +1,89 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "工号绑定";
+    Layout = "~/Views/Shared/_Login.cshtml";
+    var dd = ViewData["name"];
+    
 }
 
-<h2>Index</h2>
+<div class="page" id="pageIndex">
+
+
+    <div class="list-block" id="listBlock">
+        <ul>
+            <!-- Text inputs -->
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-name"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">微信用户名 </div>
+                        <div class="item-input">
+                            <input type="text" style=" color:white;" name="username" id="username" value="@dd">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-name"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">工 号</div>
+                        <div class="item-input">
+                            <input type="text" style="color: white;" id="zgno" name="zgno" placeholder="输入工号" class="">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-name"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label">openId</div>
+                        <div class="item-input">
+                            <input type="text" style="color: white;" id="openId" name="openId" placeholder="" class="">
+                        </div>
+                        
+                    </div>
+                </div>
+            </li>
+
+            <li class="align-top">
+                <div class="item-content">
+                    <div class="item-media">
+                        <i class="icon icon-form-comment"></i>
+                    </div>
+                    <div class="item-inner">
+                        <div class="item-title label"></div>
+                        <div class="item-input">
+                            <p id="showMes"></p>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="content-block">
+        <div class="row">
+            <div class="col-100">
+                <a href="#" id="btnBind" class="button button-big button-fill button-link">绑定</a>
+            </div>
+         
+        </div>
+    </div>
+
+
+
+</div>
+
+@section  foot{
+<script src="~/Scripts/Views/GHBindIndex.js"></script>
+
+}

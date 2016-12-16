@@ -82,7 +82,7 @@ namespace weixinCommon
                             FromUserName.InnerText,
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
-                            "你点击的是绑定工号" + userInfo.nickname + mtzg.ZG_NO + "\r\n 网址 <a href=\"http://q5sdn.free.natapp.cc\">点击进入</a>");
+                            "你点击的是绑定工号" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + mtzg.ZG_NO + "\r\n 网址 <a href=\"http://jpaep.free.natapp.cc/GHBind/Index?openid=" + userInfo.openid + "&nickname=" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + "\">点击进入</a>");
                     }
 
                 }

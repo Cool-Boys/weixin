@@ -234,6 +234,7 @@
     <Content Include="Scripts\SUI\js\sm.min.js" />
     <Content Include="Scripts\SUI\zepto.js" />
     <Content Include="Scripts\Views\demo.js" />
+    <Content Include="Scripts\Views\GHBindIndex.js" />
     <Content Include="Scripts\Views\HomeIndex.js" />
     <Content Include="Scripts\Views\LoginIndex.js" />
     <Content Include="Web.config" />
