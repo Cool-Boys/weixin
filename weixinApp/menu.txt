@@ -11,8 +11,8 @@
            "key":"V1001_GH"
       },
 	  {
-           "type":"click",
+	       "type":"view",
            "name":"°ó¶¨¹¤ºÅurl2",
-           "key":"V1001_GHurl"
+           "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fzp291.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
       }]
  }

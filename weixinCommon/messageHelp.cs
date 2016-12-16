@@ -76,14 +76,24 @@ namespace weixinCommon
                             DateTime.Now.Ticks,
                             "绑定工号" + userInfo.nickname + mtzg.ZG_NO);
                     }
-                    else if (EventKey.InnerText.Equals("V1001_GHurl"))//click_two
-                    {
-                        responseContent = string.Format(ReplyType.Message_Text,
-                            FromUserName.InnerText,
-                            ToUserName.InnerText,
-                            DateTime.Now.Ticks,
-                            "你点击的是绑定工号" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + mtzg.ZG_NO + "\r\n 网址 <a href=\"http://jpaep.free.natapp.cc/GHBind/Index?openid=" + userInfo.openid + "&nickname=" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + "\">点击进入</a>");
-                    }
+                    //else if (EventKey.InnerText.Equals("V1001_GHurl"))//click_two
+                    //{
+                    //    //responseContent = string.Format(ReplyType.Message_Text,
+                    //    //    FromUserName.InnerText,
+                    //    //    ToUserName.InnerText,
+                    //    //    DateTime.Now.Ticks,
+                    //    //    "你点击的是绑定工号" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + mtzg.ZG_NO + "\r\n 网址 <a href=\"http://zp291.free.natapp.cc/GHBind/Index?openid=" + userInfo.openid + "&nickname=" + System.Web.HttpUtility.UrlEncode(userInfo.nickname) + "\">点击进入</a>"); 
+                    //    //responseContent = string.Format(ReplyType.Message_Text,
+                    //    //   FromUserName.InnerText,
+                    //    //   ToUserName.InnerText,
+                    //    //   DateTime.Now.Ticks,
+                    //    //   "你点击的是绑定工号" + "\r\n 网址 <a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fzp291.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect\">点击进入</a>");
+                    //    responseContent = string.Format(ReplyType.Message_Text,
+                    //        FromUserName.InnerText,
+                    //        ToUserName.InnerText,
+                    //        DateTime.Now.Ticks,
+                    //        "你点击的是绑定工号" + "\r\n 网址 <a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fzp291.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_base&state=123#wechat_redirect\">点击进入</a>");
+                    //}
 
                 }
                 else if (Event.InnerText.Equals("subscribe"))
