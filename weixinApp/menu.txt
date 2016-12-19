@@ -13,6 +13,6 @@
 	  {
 	       "type":"view",
            "name":"°ó¶¨¹¤ºÅurl2",
-           "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fzp291.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
+           "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fy9eki.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_base&state=123#wechat_redirect"
       }]
  }

@@ -21,17 +21,21 @@ namespace weixinApp.Controllers
             ViewData["name"] = Request.Params["nickname"];
             return View();
         }
-        private const string urlForGettingAccessToken = "https://api.weixin.qq.com/sns/oauth2/access_token?appid={0}&secret={1}&code={2}&grant_type=authorization_code";
         public ActionResult GetOpenId(string code)
         {
             weixinUser wuUser = new weixinUser();
-            string appid = Configs.GetValue("appid");
-            string secret = Configs.GetValue("secret");
-            string url = string.Format(urlForGettingAccessToken, appid, secret, code);
-            string str = NetHelper.HttpGet(url);
-            var strJson1 = UJson.ToObject<MAccesstoken>(str);
-            string strJson = wuUser.GetUserInfo(strJson1.openid);
+            //获取页面授权
+            var model = AccessToken.GetOauthAccesstoken(code);
+            //
+            string strJson = wuUser.GetUserInfo(model.openid);
             var userInfo = UJson.ToObject<MWeixinUser>(strJson);
+            TZGBLL bll = new TZGBLL();
+            MTZG mtzg = bll.GetModelByWhere("OPENID='" + model.openid + "'");
+            userInfo.isExist = "0";
+            if (mtzg != null)
+            {
+                userInfo.isExist = "1";
+            }
             return Success("", userInfo);
         }
 
@@ -52,6 +56,7 @@ namespace weixinApp.Controllers
                 nmtzg.SUBSCRIBE = "0";
                 nmtzg.NICKNAME = nickname;
                 nmtzg.OPENID = openId;
+                bll.Update(nmtzg);
                 str = "绑定工号成功！";
                 return Success(str);
             }

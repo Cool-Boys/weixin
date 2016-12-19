@@ -63,5 +63,11 @@ namespace weixinCommon
         public string unionid { get; set; }
         public string remark { get; set; }
         public string groupid { get; set; }
+       /// <summary>
+       /// 是否已经绑定
+       /// </summary>
+        public string isExist { get; set; }
+
+
     }
 }

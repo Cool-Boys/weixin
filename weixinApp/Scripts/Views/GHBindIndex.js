@@ -22,10 +22,19 @@
         //timeout: 5000,
         //context: $('#data'),
         success: function (data) {
-            //加载ajax页面
-            $('#openId').val(data.data.openid);
-            $('#username').val(data.data.nickname);
+
             if (data.state == "success") {
+
+                if (data.data.isExist == "1") {
+                    $.alert('用户已经绑定！', function () {
+                        wx.closeWindow();
+                    });
+
+                } else {
+                    //加载ajax页面
+                    $('#openId').val(data.data.openid);
+                    $('#username').val(data.data.nickname);
+                }
                 $('#showMes').css('color', 'green');
                 $.hidePreloader();
 
@@ -57,7 +66,7 @@
 
 
 function ghBind() {
-    var openId = GetQueryString("openid");
+    var openId = $('#openId').val();
     var nickName = $('#username').val();
     var zgNo = $('#zgno').val();
     if (zgNo.trim() == "") {
@@ -85,11 +94,14 @@ function ghBind() {
             if (data.state == "success") {
                 $('#showMes').css('color', 'green');
                 $.hidePreloader();
-
+                $.alert('用户绑定成功！', function () {
+                    wx.closeWindow();
+                });
             }
             else if (data.state == "error") {
                 $('#showMes').css('color', 'red');
                 $.hidePreloader();
+                $.alert('用户绑定失败！');
             }
             else {
                 $.hidePreloader();

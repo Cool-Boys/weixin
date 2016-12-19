@@ -55,18 +55,25 @@ namespace weixinCommon
                 {
                     weixinUser wuUser = new weixinUser();
                     string strJson = wuUser.GetUserInfo(FromUserName.InnerText);
-                    TZGBLL bll = new TZGBLL();
-                    MTZG mtzg = bll.GetModelByWhere("ZG_NO='10029040'");
                     var userInfo = strJson.ToObject<MWeixinUser>();
+                    TZGBLL bll = new TZGBLL();
+                    MTZG mtzg = bll.GetModelByWhere("OPENID='"+ userInfo.openid+"'");
                     if (EventKey.InnerText.Equals("V1001_GZ"))//click_one
                     {
-
-
+                        string str = "";
+                        if (mtzg == null)
+                        {
+                            str = "未进行员工绑定，不能查看工资！";
+                        }
+                        else
+                        {
+                            str = "你点击的是今日工资" + userInfo.nickname + mtzg.ZG_NO;
+                        }
                         responseContent = string.Format(ReplyType.Message_Text,
                             FromUserName.InnerText,
                             ToUserName.InnerText,
-                            DateTime.Now.Ticks,
-                            "你点击的是今日工资" + userInfo.nickname + mtzg.ZG_NO);
+                            DateTime.Now.Ticks, str
+                            );
                     }
                     else if (EventKey.InnerText.Equals("V1001_GH"))//click_two
                     {
@@ -74,7 +81,7 @@ namespace weixinCommon
                             FromUserName.InnerText,
                             ToUserName.InnerText,
                             DateTime.Now.Ticks,
-                            "绑定工号" + userInfo.nickname + mtzg.ZG_NO);
+                            userInfo.nickname + "：请输入绑定工号\r\n 网址 <a href=\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx44f8483b5dd952d0&redirect_uri=http%3a%2f%2fy9eki.free.natapp.cc%2fGHBind%2fIndex&response_type=code&scope=snsapi_base&state=123#wechat_redirect\">点击进入</a>");
                     }
                     //else if (EventKey.InnerText.Equals("V1001_GHurl"))//click_two
                     //{

@@ -14,6 +14,7 @@ namespace weixinApp
                           "~/Scripts/SUI/config.js",
                          "~/Scripts/SUI/js/sm.js",
                         "~/Scripts/SUI/js/sm-extend.js",
+                         "~/Scripts/jweixin-1.0.0.js",
                         "~/Scripts/common.js"
                         ));
             //样式
